@@ -1,0 +1,56 @@
+<html>
+ <head>
+   <title>复选框checked属性</title>
+   <script language="JavaScript" type="text/javascript">
+
+   //全选按钮函数
+      function changeState(isChecked)
+     {
+       var chk_list=document.getElementsByTagName("input");
+       for(var i=0;i<chk_list.length;i++)
+        {
+         if(chk_list[i].type=="checkbox")
+          {
+           chk_list[i].checked=isChecked;
+          }
+        }
+    }
+
+
+   </script>
+ </head>
+ <body>
+   <h1>请选择你的爱好</h1>
+   <form name="myForm1">
+     <input type="checkbox" name="cb" value="看书" >看书<br>
+     <input type="checkbox" name="cb" value="上网" >上网<br>
+     <input type="checkbox" name="cb" value="游戏" >游戏<br>
+   </form>
+   <hr>
+   <script>
+   
+//获取选中的状态值
+    var str="";
+   function show()
+  {
+           var checks=document.forms[0].cb;
+          for(var i=0;i<checks.length;i++)
+         {
+            if(checks[i].checked)
+             {
+                  str=str+checks[i].value+",";
+             }
+         }
+    alert("你选中的有: "+str);
+	var cell1=str;
+	document.write(str);
+}
+
+   </script>
+   <form name="myForm2">
+     <input type="checkbox" name="cb" onclick="changeState(this.checked)">全选
+	 <input type=button value=提交 onclick="show();">
+	 	<input type="submit" value="提交2"/>
+   </form>
+ </body>
+</html>

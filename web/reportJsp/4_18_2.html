@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+</HEAD>
+<script>
+var str="";
+function show()
+{
+var checks=document.forms[0].kc;
+for(var i=0;i<checks.length;i++)
+{
+if(checks[i].checked)
+{
+str=str+checks[i].value+",";
+}
+}
+alert("你选中的有: "+str);
+}
+</script>
+<BODY>
+<form>
+<input type=checkbox name=kc value="语文">语文<br>
+<input type=checkbox name=kc value="数学">数学<br>
+<input type=checkbox name=kc value="政治">政治<br>
+<input type=checkbox name=kc value="英语">英语<br>
+<input type=checkbox name=kc value="化学">化学<br>
+<input type=checkbox name=kc value="物理">物理<br>
+<input type=checkbox name=kc value="计算机">计算机<br>
+<input type=button value=提交 onclick="show();">
+</form>
+</BODY>
+</HTML>
